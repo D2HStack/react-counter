@@ -1,0 +1,27 @@
+.counter {
+  background-color: #523fcd;
+  height: 150px;
+  width: 150px;
+  color: white;
+  padding: 10px;
+  font-size: 96px;
+}
+
+.off {
+  display: none;
+}
+
+.minus {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.plus {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.reset {
+  font-size: 40px;
+  font-weight: bold;
+}

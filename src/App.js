@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./style.css";
+
+import Logo from "./Logo";
+import Button from "./Button";
+import Footer from "./Footer";
 
 function App() {
+  // set the useState variables
+  const [counter, setCounter] = useState(0);
+
+  // function declarations
+  // increment
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+
+  // decrement
+  const decrement = () => {
+    setCounter(counter - 1);
+  };
+
+  // reset
+  const reset = () => {
+    setCounter(0);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Logo></Logo>
+      <Button
+        name="-"
+        onEvent={decrement}
+        render={counter > 0 ? "minus" : "off"}
+      ></Button>
+      <span className="counter">{counter}</span>
+      <Button
+        name="+"
+        onEvent={increment}
+        render={counter > 10 ? "off" : "plus"}
+      ></Button>
+      <Button name="Reset" onEvent={reset} render="reset"></Button>
+      <Footer>Made with React at le Reacteur by Hoang</Footer>
+    </>
   );
 }
 
